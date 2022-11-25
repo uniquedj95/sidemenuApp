@@ -1,0 +1,7 @@
+{
+  "name": "sidemenuApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
