@@ -2,19 +2,19 @@
   <ion-page>
     <ion-header :translucent="true">
       <ion-toolbar>
-        <ion-title>Home</ion-title>
+        <ion-title>Report One</ion-title>
       </ion-toolbar>
     </ion-header>
     
     <ion-content :fullscreen="true">
       <ion-header collapse="condense">
         <ion-toolbar>
-          <ion-title size="large">Home</ion-title>
+          <ion-title size="large">Report One</ion-title>
         </ion-toolbar>
       </ion-header>
     
       <div id="container">
-        <strong>This is home us page</strong>
+        <strong>This is Report One page</strong>
       </div>
     </ion-content>
   </ion-page>
@@ -25,7 +25,7 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'HomePage',
+  name: 'ReportOne',
   components: {
     IonContent,
     IonHeader,
