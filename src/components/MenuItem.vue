@@ -1,6 +1,6 @@
 <template>
   <ion-accordion-group v-if="item.children?.length">
-    <ion-accordion :value="item.label">
+    <ion-accordion :value="item.label" :toggle-icon="chevronForward">
       <ion-item slot="header">
         <img v-if="item.img" :src="item.img" :alt="item.label" class="ion-margin-end icon" />
         <ion-label>{{ item.label }}</ion-label>
@@ -25,6 +25,7 @@
 <script lang="ts">
 import { MenuItem as MenuItemInterface } from '@/appMenu';
 import { IonMenuToggle, IonItem, IonLabel, IonIcon, IonAccordion, IonAccordionGroup } from '@ionic/vue';
+import { chevronForward } from 'ionicons/icons';
 import { defineComponent, PropType } from 'vue'
 import { RouterLink } from 'vue-router';
 
@@ -45,5 +46,8 @@ export default defineComponent({
       required: true
     }
   },
+  data: () => ({
+    chevronForward,
+  })
 })
 </script>
