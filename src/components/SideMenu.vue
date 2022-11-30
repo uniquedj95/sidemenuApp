@@ -8,33 +8,7 @@
     <ion-content>
       <keep-alive>
         <ion-list>
-          <template v-for="(menu, i) of appMenu">
-            <menu-item :item="menu" v-if="!menu.children?.length" :key="menu.label" />
-            <ion-accordion-group v-else :key="i">
-              <ion-accordion :value="menu.label" :key="menu.label">
-                <ion-item slot="header">
-                  <ion-label>{{ menu.label }}</ion-label>
-                  <ion-icon :icon="menu.icon" slot="start"></ion-icon>
-                </ion-item>
-                <div class="ion-padding-start" slot="content">
-                  <template v-for="(child1, i) of  menu.children">
-                    <menu-item :item="child1" v-if="!child1.children?.length" :key="child1.label" />
-                    <ion-accordion-group v-else :key="i">
-                      <ion-accordion :value="child1.label" :key="child1.label">
-                        <ion-item slot="header">
-                          <ion-label>{{ child1.label }}</ion-label>
-                          <ion-icon :icon="child1.icon" slot="start"></ion-icon>
-                        </ion-item>
-                        <div class="ion-padding-start" slot="content">
-                          <menu-item v-for="child2 of child1.children" :item="child2"  :key="child2.label" />
-                        </div>
-                      </ion-accordion>
-                    </ion-accordion-group>
-                  </template>
-                </div>
-              </ion-accordion>
-            </ion-accordion-group>
-          </template>          
+          <menu-item v-for="(item, i) of appMenu" :key="i" :item="item" />
         </ion-list>
       </keep-alive>
     </ion-content>
@@ -49,14 +23,9 @@ import {
   IonMenu, 
   IonContent, 
   IonList, 
-  IonItem, 
-  IonLabel, 
-  IonIcon, 
   IonHeader, 
   IonTitle, 
-  IonToolbar, 
-  IonAccordion, 
-  IonAccordionGroup 
+  IonToolbar,
 } from "@ionic/vue";
 
 export default defineComponent({
@@ -67,12 +36,7 @@ export default defineComponent({
     IonHeader, 
     IonToolbar,
     IonTitle, 
-    IonList, 
-    IonItem, 
-    IonLabel, 
-    IonIcon,
-    IonAccordionGroup,
-    IonAccordion,
+    IonList,
     MenuItem,
   },
   setup() {
